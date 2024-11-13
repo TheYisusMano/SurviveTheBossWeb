@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Survive The Boss</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>SURVIVE THE BOSS</h1>
+            <ul>
+                <li><a href="#inicio">INICIO</a></li>
+                <li><a href="#trailer">TRAILER</a></li>
+                <li><a href="#galeria">GALERÍA</a></li>
+                <li><a href="#personajes">PERSONAJES</a></li>
+                <li><a href="#sobre-mi">SOBRE MÍ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h2>SURVIVE THE BOSS</h2>
+            <p>¿Podrás sobrevivir en la jungla corporativa?</p>
+            <button>JUGAR AHORA</button>
+        </section>
+
+        <section id="trailer">
+            <h2>TRAILER</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/watch?v=cKux39Y0fxw" title="Survive The Boss Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="galeria">
+            <h2>GALERÍA</h2>
+            <div class="slider">
+                <img src="jefe.png" alt="Imagen del juego 1" id="slider-image">
+                <button class="prev" aria-label="Imagen anterior">&lt;</button>
+                <button class="next" aria-label="Imagen siguiente">&gt;</button>
+            </div>
+        </section>
+
+        <section id="personajes">
+            <h2>PERSONAJES</h2>
+            <div class="character-slider">
+                <h3 id="character-name">?</h3>
+                <button class="prev" aria-label="Personaje anterior">&lt;</button>
+                <button class="next" aria-label="Personaje siguiente">&gt;</button>
+            </div>
+        </section>
+
+        <section id="sobre-mi">
+            <h2>SOBRE NOSOTROS</h2>
+            <div class="about-card">
+                <h3>Jesús Escobar</h3>
+                <p>Ingeniero en Informática</p>
+                <p>Creador de "Survive The Boss"</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SURVIVE THE BOSS. UAH</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Galería de imágenes
+            const sliderImage = document.getElementById('slider-image');
+            const prevImageBtn = document.querySelector('#galeria .prev');
+            const nextImageBtn = document.querySelector('#galeria .next');
+            const images = [
+                'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.1zoom.me%2Fes%2Fwallpaper%2F604176%2Fz5703.4%2F600x400&psig=AOvVaw08QVWjBNJ3BsbI2LJbL0wP&ust=1731464276759000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCeuP3d1YkDFQAAAAAdAAAAABAE',
+                'https://via.placeholder.com/600x400.png?text=Imagen+del+juego+2',
+                'https://via.placeholder.com/600x400.png?text=Imagen+del+juego+3'
+            ];
+            let currentImageIndex = 0;
+
+            function updateImage() {
+                sliderImage.src = images[currentImageIndex];
+                sliderImage.alt = `Imagen del juego ${currentImageIndex + 1}`;
+            }
+
+            prevImageBtn.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            nextImageBtn.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+
+            // Slider de personajes
+            const characterImage = document.getElementById('character-image');
+            const characterName = document.getElementById('character-name');
+            const prevCharBtn = document.querySelector('#personajes .prev');
+            const nextCharBtn = document.querySelector('#personajes .next');
+            const characters = [
+                { name: 'jefe.png', image: 'jefe.png' },
+                { name: 'Empleado Heroico', image: 'https://via.placeholder.com/600x400.png?text=Empleado+Heroico' },
+                { name: 'Compañero Leal', image: 'https://via.placeholder.com/600x400.png?text=Compañero+Leal' },
+                { name: 'Rival Ambicioso', image: 'https://via.placeholder.com/600x400.png?text=Rival+Ambicioso' }
+            ];
+            let currentCharIndex = 0;
+
+            function updateCharacter() {
+                characterImage.src = characters[currentCharIndex].image;
+                characterImage.alt = characters[currentCharIndex].name;
+                characterName.textContent = characters[currentCharIndex].name;
+            }
+
+            prevCharBtn.addEventListener('click', () => {
+                currentCharIndex = (currentCharIndex - 1 + characters.length) % characters.length;
+                updateCharacter();
+            });
+
+            nextCharBtn.addEventListener('click', () => {
+                currentCharIndex = (currentCharIndex + 1) % characters.length;
+                updateCharacter();
+            });
+        });
+    </script>
+</body>
+</html>
