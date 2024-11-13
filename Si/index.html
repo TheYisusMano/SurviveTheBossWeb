@@ -3,8 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
     <title>Survive The Boss</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #a69ead;
+            line-height: 1.6;
+            color: #000000;
+        }
+        
+        @font-face {
+        font-family: 'UpheavTT'; /* Elige un nombre amigable para la fuente */
+        src: url('upheavtt.ttf') format('truetype');
+        font-weight: normal; /* Opcional: puedes especificar el peso */
+        font-style: normal; /* Opcional: puedes especificar el estilo */
+        }
+
+
+        #inicio {
+            background-image: url('fondo_final.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            color: rgb(255, 0, 0);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        #inicio {
+            background-image: url('fondo_final.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        #inicio h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        #inicio p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        button {
+            background-color: linear-gradient(45deg,#8c00ff,#a69ead,#1a1a1a,#f4f4f4)
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 5s;
+           
+        }
+
+        button:hover {
+            background-color: #8c00ff;
+        }
+
+        #trailer {
+            background-color: #150d1a;
+            color: rgb(255, 255, 255);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 35%;
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider, .character-slider {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .slider img, .character-slider img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .slider button, .character-slider button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .slider .prev, .character-slider .prev {
+            left: 10px;
+        }
+
+        .slider .next, .character-slider .next {
+            right: 10px;
+        }
+
+        #personajes {
+            background-color: #1a1a1a;
+            color: rgb(255, 255, 255);
+        }
+
+        .character-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.7);
+            padding: 1rem;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .about-card {
+            background-color: #f4f4f4;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+
+            #inicio h2 {
+                font-size: 2rem;
+            }
+
+            #inicio p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,21 +239,21 @@
     <main>
         <section id="inicio">
             <h2>SURVIVE THE BOSS</h2>
-            <p>¿Podrás sobrevivir en la jungla corporativa?</p>
+            <p><i>¿Podrás sobrevivir a la calva de moya(mota)?</i></p>
             <button>JUGAR AHORA</button>
         </section>
 
         <section id="trailer">
             <h2>TRAILER</h2>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/watch?v=cKux39Y0fxw" title="Survive The Boss Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/nvSbdc2zTwg" title="Survive The Boss Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
 
         <section id="galeria">
             <h2>GALERÍA</h2>
             <div class="slider">
-                <img src="jefe.png" alt="Imagen del juego 1" id="slider-image">
+                <img src="1.png" alt="Imagen del juego jsjs" id="slider-image">
                 <button class="prev" aria-label="Imagen anterior">&lt;</button>
                 <button class="next" aria-label="Imagen siguiente">&gt;</button>
             </div>
@@ -46,14 +262,17 @@
         <section id="personajes">
             <h2>PERSONAJES</h2>
             <div class="character-slider">
-                <h3 id="character-name">?</h3>
+                <img src="jefe.png" alt="Jefe Malvado" id="character-image">
+                <div class="character-info">
+                    <h3 id="character-name">Jefe "MOYA"</h3>
+                </div>
                 <button class="prev" aria-label="Personaje anterior">&lt;</button>
                 <button class="next" aria-label="Personaje siguiente">&gt;</button>
             </div>
         </section>
 
         <section id="sobre-mi">
-            <h2>SOBRE NOSOTROS</h2>
+            <h2>SOBRE MÍ</h2>
             <div class="about-card">
                 <h3>Jesús Escobar</h3>
                 <p>Ingeniero en Informática</p>
@@ -63,7 +282,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 SURVIVE THE BOSS. UAH</p>
+        <p>&copy; 2024 SURVIVE THE BOSS. Todos los derechos reservados.</p>
     </footer>
 
     <script>
@@ -73,9 +292,9 @@
             const prevImageBtn = document.querySelector('#galeria .prev');
             const nextImageBtn = document.querySelector('#galeria .next');
             const images = [
-                'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.1zoom.me%2Fes%2Fwallpaper%2F604176%2Fz5703.4%2F600x400&psig=AOvVaw08QVWjBNJ3BsbI2LJbL0wP&ust=1731464276759000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCeuP3d1YkDFQAAAAAdAAAAABAE',
-                'https://via.placeholder.com/600x400.png?text=Imagen+del+juego+2',
-                'https://via.placeholder.com/600x400.png?text=Imagen+del+juego+3'
+                '1.png',
+                '2.png',
+                '1.png'
             ];
             let currentImageIndex = 0;
 
@@ -100,10 +319,10 @@
             const prevCharBtn = document.querySelector('#personajes .prev');
             const nextCharBtn = document.querySelector('#personajes .next');
             const characters = [
-                { name: 'jefe.png', image: 'jefe.png' },
-                { name: 'Empleado Heroico', image: 'https://via.placeholder.com/600x400.png?text=Empleado+Heroico' },
-                { name: 'Compañero Leal', image: 'https://via.placeholder.com/600x400.png?text=Compañero+Leal' },
-                { name: 'Rival Ambicioso', image: 'https://via.placeholder.com/600x400.png?text=Rival+Ambicioso' }
+                { name: 'Jefe "MOYA"', image: 'jefe.png' },
+                { name: 'Pepito', image: 'zayleyh.png' },
+                { name: 'Compañero Leal', image: 'MADE.png' },
+                { name: 'Rival Ambicioso', image: 'gaby.png' }
             ];
             let currentCharIndex = 0;
 
